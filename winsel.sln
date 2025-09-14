@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winsel", "winsel\winsel.csproj", "{9937DBEB-EB0B-438D-9809-12C99EEC418D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winsel-net-framework", "winsel-net-framework\winsel-net-framework.csproj", "{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9937DBEB-EB0B-438D-9809-12C99EEC418D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9937DBEB-EB0B-438D-9809-12C99EEC418D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9937DBEB-EB0B-438D-9809-12C99EEC418D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9937DBEB-EB0B-438D-9809-12C99EEC418D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABC3C875-552D-4C20-B964-D7082BCD4792}
+	EndGlobalSection
+EndGlobal
