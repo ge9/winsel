@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>winsel_net_framework</RootNamespace>
-    <AssemblyName>winsel-net-framework</AssemblyName>
+    <ProjectGuid>{E2A98721-F511-41A0-8397-E1C973D26E48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>winsel_gui_net_framework</RootNamespace>
+    <AssemblyName>winsel-gui-net-framework</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,7 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

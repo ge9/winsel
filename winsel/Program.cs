@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -97,7 +96,7 @@ class CB_Tweak_App : Form
         }
     }
 
-    public static int ExecuteCommand_cui(string command)
+    public static int ExecuteCommand(string command)
     {
         // Prepare the STARTUPINFO structure
         STARTUPINFO si = new STARTUPINFO();
@@ -134,31 +133,6 @@ class CB_Tweak_App : Form
 
         return (int)exitCode;
     }
-    public static int ExecuteCommand_gui(string command)
-    {
-        STARTUPINFO si = new STARTUPINFO();
-        si.cb = Marshal.SizeOf(si);
-        PROCESS_INFORMATION pi = new PROCESS_INFORMATION();
-
-        if (!CreateProcess(null, command, IntPtr.Zero, IntPtr.Zero, true, 0, IntPtr.Zero, null, ref si, out pi))
-            return -1;
-
-        uint r = WaitForSingleObject(pi.hProcess, uint.MaxValue); // INFINITE
-        if (r != 0) {
-            Console.WriteLine("Wait failed; exit code {0}", r); return -1;
-        }
-        
-        // Get the exit code
-        uint exitCode;
-        if (!GetExitCodeProcess(pi.hProcess, out exitCode)){
-            Console.WriteLine("GetExitCodeProcess failed"); return -1;
-        }
-
-        CloseHandle(pi.hProcess);
-        CloseHandle(pi.hThread);
-
-        return (int)exitCode;
-    }
 
     public static string SeparateExecPath(string s)
     {
@@ -182,7 +156,6 @@ class CB_Tweak_App : Form
     private const int CBSTT_GETTEXT = 1;
     private const int CBSTT_RUNCOMMAND = 2;
     private const int CBSTT_RESTORE_LAST = 3;
-    private const int CBSTT_RUNCOMMAND_GUI = 4;
 
     private int clip_detect = CBSTT_NOOP;
     private System.Windows.Forms.IDataObject last_cb = new DataObject();
@@ -203,24 +176,17 @@ class CB_Tweak_App : Form
     }
     public CB_Tweak_App()
     {
-        this.Visible = false;
-        this.WindowState = FormWindowState.Minimized;
-        this.ShowInTaskbar = false;
-        this.TopMost = true;
-        this.Size = new Size(800, 800);
-        this.CenterToScreen();
+        Visible = false;
+        WindowState = FormWindowState.Minimized;
+        ShowInTaskbar = false;
     }
     private void RunCommand()
     {
         arg0 = SeparateExecPath(Environment.CommandLine);
         if (arg0.Length == 0){
             clip_detect = CBSTT_GETTEXT;
-        }else if (arg0[0] == 'g') {
-            clip_detect = CBSTT_RUNCOMMAND_GUI;
-        } else if (arg0[0] == 'c') {
-            clip_detect = CBSTT_RUNCOMMAND;
         } else {
-            clip_detect = CBSTT_GETTEXT;
+            clip_detect = CBSTT_RUNCOMMAND;
         }
         BackupCBto(ref last_cb);
         AddClipboardFormatListener(this.Handle);
@@ -279,11 +245,8 @@ class CB_Tweak_App : Form
                 if (restore_done) return;
                 switch (clip_detect)
                 {
-                    case CBSTT_RUNCOMMAND_GUI:
-                        ExecuteCommand_gui(arg0.Substring(2));
-                        goto case CBSTT_RESTORE_LAST;
                     case CBSTT_RUNCOMMAND:
-                        ExecuteCommand_cui(arg0.Substring(2));
+                        ExecuteCommand(arg0);
                         goto case CBSTT_RESTORE_LAST;
                     case CBSTT_GETTEXT:
                         string text = Clipboard.GetText(TextDataFormat.UnicodeText);

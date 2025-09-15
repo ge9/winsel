@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winsel", "winsel\winsel.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winsel-net-framework", "winsel-net-framework\winsel-net-framework.csproj", "{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winsel-gui-net-framework", "winsel-gui-net-framework\winsel-gui-net-framework.csproj", "{E2A98721-F511-41A0-8397-E1C973D26E48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winsel-gui", "winsel-gui\winsel-gui.csproj", "{FE8BB8B8-B3E5-43A3-8B92-3AD0840BA995}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7449ECB-13BC-46BE-9645-87E2CB9C4EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2A98721-F511-41A0-8397-E1C973D26E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2A98721-F511-41A0-8397-E1C973D26E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2A98721-F511-41A0-8397-E1C973D26E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2A98721-F511-41A0-8397-E1C973D26E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8BB8B8-B3E5-43A3-8B92-3AD0840BA995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8BB8B8-B3E5-43A3-8B92-3AD0840BA995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8BB8B8-B3E5-43A3-8B92-3AD0840BA995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8BB8B8-B3E5-43A3-8B92-3AD0840BA995}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
